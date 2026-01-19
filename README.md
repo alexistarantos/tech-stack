@@ -14,8 +14,7 @@
 ### 1. Initialize Project
 
 ```bash
-npx create-next-app@latest my-starter --typescript --tailwind --app --no-src-dir --import-alias "@/*"
-cd my-starter
+npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias "@/*"
 ```
 
 ### 2. Install Dependencies
