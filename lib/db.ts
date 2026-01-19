@@ -1,0 +1,42 @@
+import mongoose from 'mongoose';
+
+const MONGODB_URI = process.env.MONGODB_URI!;
+
+if (!MONGODB_URI) {
+    throw new Error('Please define MONGODB_URI in .env.local');
+}
+
+// Check for placeholder values
+if (MONGODB_URI.includes('username:password') || MONGODB_URI.includes('dbname') && !MONGODB_URI.includes('@')) {
+    throw new Error('Please replace the placeholder values in MONGODB_URI with your actual MongoDB connection string');
+}
+
+interface MongooseCache {
+    conn: typeof mongoose | null;
+    promise: Promise<typeof mongoose> | null;
+}
+
+declare global {
+    var mongoose: MongooseCache | undefined;
+}
+
+let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
+
+if (!global.mongoose) {
+    global.mongoose = cached;
+}
+
+async function connectDB() {
+    if (cached.conn) {
+        return cached.conn;
+    }
+
+    if (!cached.promise) {
+        cached.promise = mongoose.connect(MONGODB_URI);
+    }
+
+    cached.conn = await cached.promise;
+    return cached.conn;
+}
+
+export default connectDB;
