@@ -1,14 +1,9 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI!;
+const MONGODB_URI = process.env.MONGODB_URI as string;
 
 if (!MONGODB_URI) {
-    throw new Error('Please define MONGODB_URI in .env.local');
-}
-
-// Check for placeholder values
-if (MONGODB_URI.includes('username:password') || MONGODB_URI.includes('dbname') && !MONGODB_URI.includes('@')) {
-    throw new Error('Please replace the placeholder values in MONGODB_URI with your actual MongoDB connection string');
+    throw new Error('Please define MONGODB_URI variable in .env.local');
 }
 
 interface MongooseCache {

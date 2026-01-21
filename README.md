@@ -72,7 +72,7 @@ my-starter/
 │   └── utils.ts
 ├── models/
 │   └── user.ts
-└── middleware.ts
+└── proxy.ts
 ```
 
 ### 7. Configure Webhooks
