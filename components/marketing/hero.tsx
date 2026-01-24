@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { AvatarGroup } from "@/components/ui/avatar-group"
+import { Star } from "lucide-react";
 import { ArrowRight } from "lucide-react"
 import { auth } from "@clerk/nextjs/server"
 
@@ -15,7 +17,8 @@ export async function Hero() {
       {/* Content Section */}
       <div className="relative z-10 mx-auto flex flex-col items-center gap-6 text-center">
         {/* Badge */}
-        <Badge variant="outline" className="w-fit whitespace-nowrap shrink-0 justify-center overflow-hidden mb-4">
+        <Badge variant="outline" className="w-fit whitespace-nowrap shrink-0 gap-1 justify-center overflow-hidden mb-4">
+          <Star className="h-3 w-3" />
           New Features Released
         </Badge>
 
@@ -24,10 +27,29 @@ export async function Hero() {
           Design faster than ever
         </h1>
 
-        {/* Subtitle */}
-        <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
-          Our intuitive interface and powerful components help you build beautiful websites in record time.
-        </p>
+        <div className="flex flex-col gap-2">
+          {/* Subtitle */}
+          <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">
+            Our intuitive interface and powerful components help you build beautiful websites in record time.
+          </p>
+
+          {/* Trust Indicator */}
+          <div className="flex items-center justify-center gap-2 rounded-full bg-background mb-2">
+            <AvatarGroup
+              avatars={[
+                { src: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png", alt: "User 1", fallback: "OS" },
+                { src: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-6.png", alt: "User 2", fallback: "HL" },
+                { src: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-5.png", alt: "User 3", fallback: "HR" },
+                { src: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-16.png", alt: "User 4", fallback: "JW" },
+              ]}
+              max={4}
+            />
+            <span className="text-sm font-medium">
+              Loved by <span className="font-bold">10K+</span> developers.
+            </span>
+          </div>
+
+        </div>
 
         {/* Buttons */}
         <div className="flex flex-col gap-4 sm:flex-row">
