@@ -68,7 +68,7 @@ export async function Hero() {
       {/* Image Section */}
       <div className="relative mt-12 w-full">
         {/* Main Image */}
-        <div className="bg-card rounded-xl border shadow-2xl">
+        <div className="bg-card rounded-xl border shadow-2xl animate-float-slower">
           <Image
             src="https://placehold.co/1200x600.jpeg"
             alt="Dashboard Screenshot"
@@ -80,7 +80,7 @@ export async function Hero() {
         </div>
 
         {/* Smaller Image - Top Right */}
-        <div className="absolute -top-12 -right-8 w-72 rotate-3 transform transition-transform duration-300 hover:rotate-0">
+        <div className="absolute -top-12 -right-8 w-72 rotate-3 transform transition-transform duration-300 hover:rotate-0 animate-float">
           <div className="bg-card rounded-lg border shadow-lg">
             <Image
               src="https://placehold.co/300x200.jpeg"
@@ -93,7 +93,7 @@ export async function Hero() {
         </div>
 
         {/* Smaller Image - Top Left */}
-        <div className="absolute top-1/4 -left-8 w-64 -rotate-3 transform transition-transform duration-300 hover:rotate-0">
+        <div className="absolute top-1/4 -left-8 w-64 -rotate-3 transform transition-transform duration-300 hover:rotate-0 animate-float-slow">
           <div className="bg-card rounded-lg border shadow-lg">
             <Image
               src="https://placehold.co/300x200.jpeg"

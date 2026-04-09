@@ -7,7 +7,7 @@ export default async function Navbar() {
     const { userId } = await auth();
 
     return (
-        <nav className="border-b border-border sticky top-0 z-50 bg-white dark:bg-black">
+        <nav className="border-b border-border sticky top-0 z-50 bg-white/70 dark:bg-black/70 backdrop-blur-md">
             <div className="max-w-6xl mx-auto flex h-16 items-center justify-between px-4">
                 <Link href="/" className="text-xl font-semibold">
                     Tech Stack
