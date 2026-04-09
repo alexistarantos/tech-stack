@@ -24,6 +24,11 @@ Next.js 16 App Router with three route groups:
 - `(auth)/` — Clerk sign-in/sign-up pages (`[[...sign-in]]`, `[[...sign-up]]` catch-all routes)
 - `(dashboard)/` — Protected area with `SidebarProvider` + `AppSidebar` + `Header` layout
 
+**Marketing components** (`components/marketing/`):
+- `hero.tsx` — Hero section with badge, headline, CTA buttons, AvatarGroup trust indicator, and floating product screenshots
+- `features.tsx` — 3-column responsive feature grid (6 cards: icon + title + description), themed around the tech stack value props
+- `navbar.tsx` — Top navigation bar
+
 **API routes:**
 - `app/api/users/route.ts` — GET/POST user (upsert by Clerk ID)
 - `app/api/stripe/webhooks/route.ts` — Handles `customer.subscription.*` events
