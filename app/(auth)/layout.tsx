@@ -1,4 +1,5 @@
 import Navbar from '@/components/marketing/navbar';
+import { Footer } from '@/components/marketing/footer';
 
 export default function AuthLayout({
     children,
@@ -9,6 +10,7 @@ export default function AuthLayout({
         <>
             <Navbar />
             {children}
+            <Footer />
         </>
     )
 }
