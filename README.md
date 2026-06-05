@@ -1,5 +1,5 @@
 # Next.js Starter Repository
-
+ 
 ## Tech Stack
 
 - **Framework:** Next.js 15 (App Router)
